@@ -3,6 +3,7 @@ name: Vee3
 description: Live agent tools for domains, X, Google Trends, SEO, YouTube, TikTok, and more.
 author: Vee3
 url: https://vee3.io
+github: https://github.com/Vee3io/vee3
 tags:
   - mcp
   - vee3
@@ -13,10 +14,10 @@ tags:
   - google trends
   - seo
   - youtube
+prerequisites:
+  - Free account at app.vee3.io
 content:
-  - name: MCP Server
-    prerequisites:
-      - Node.js
+  - name: Remote MCP Server
     content: |
       {
         "type": "streamable-http",
