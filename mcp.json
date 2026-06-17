@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "vee3": {
+      "url": "https://mcp.vee3.io/mcp",
+      "headers": {
+        "VEE3_API_KEY": "${env:VEE3_API_KEY}"
+      }
+    }
+  }
+}
