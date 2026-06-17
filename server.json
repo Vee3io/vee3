@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.vee3io/vee3",
+  "name": "io.github.Vee3io/vee3",
   "title": "Vee3",
   "description": "Hosted MCP with 78 agent tools: X, domains, SEO, Trends, YouTube, TikTok, screenshots, and more.",
   "repository": {
-    "url": "https://github.com/vee3io/Vee3",
+    "url": "https://github.com/Vee3io/Vee3",
     "source": "github"
   },
   "version": "1.0.0",
