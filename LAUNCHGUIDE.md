@@ -11,6 +11,19 @@ Tools cover domain research (availability, WHOIS, DNS, RDAP, metrics), X (Twitte
 Sign up at [app.vee3.io](https://app.vee3.io) for a free tier. Tool calls use token-based billing; failed calls are not charged.
 
 ## Setup Requirements
+`mcp.json`
+```
+{
+  "mcpServers": {
+    "vee3": {
+      "url": "https://mcp.vee3.io/mcp",
+      "headers": {
+        "VEE3_API_KEY": "${env:VEE3_API_KEY}"
+      }
+    }
+  }
+}
+```
 - `VEE3_API_KEY` (required): Your Vee3 API key. Create one at [app.vee3.io/dashboard/keys](https://app.vee3.io/dashboard/keys). Pass it as a request header on the hosted MCP connection.
 
 ## Category
