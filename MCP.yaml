@@ -1,0 +1,31 @@
+id: vee3
+name: Vee3
+description: Live agent tools for domains, X, Google Trends, SEO, YouTube, TikTok, and more.
+author: Vee3
+url: https://vee3.io
+tags:
+  - mcp
+  - vee3
+  - live agent
+  - tools
+  - domains
+  - x
+  - google trends
+  - seo
+  - youtube
+content:
+  - name: MCP Server
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://mcp.vee3.io/mcp",
+        "headers": {
+          "VEE3_API_KEY": "${env:VEE3_API_KEY}"
+        }
+      }
+parameters:
+  - name: VEE3_API_KEY
+    key: VEE3_API_KEY
+    placeholder: your_api_key_here
