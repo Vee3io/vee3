@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.vee3io/vee3",
+  "title": "Vee3",
+  "description": "Hosted MCP with 78 agent tools: X, domains, SEO, Trends, YouTube, TikTok, screenshots, and more.",
+  "repository": {
+    "url": "https://github.com/vee3io/Vee3",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "websiteUrl": "https://vee3.io/capabilities",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.vee3.io/mcp",
+      "headers": [
+        {
+          "name": "VEE3_API_KEY",
+          "description": "API key from https://app.vee3.io/dashboard/keys",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
