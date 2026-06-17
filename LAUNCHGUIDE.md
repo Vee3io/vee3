@@ -43,7 +43,7 @@ Market Research, Due Diligence, Content Research, Prototyping, Competitive Analy
 - Rotten Tomatoes movie and TV search, scores, reviews, and cast data
 - TikTok user profiles, videos, search, comments, music, and downloads
 - Website screenshots for visual review of public URLs
-- Free catalog discovery via `list_groups`, `list_group_tools`, `list_all_tools`, and `describe_tool`
+- Free catalog discovery via `meta-tools.list_groups`, `meta-tools.list_group_tools`, `meta-tools.list_all`, and `meta-tools.describe`
 
 ## Getting Started
 - "Brainstorm five names for my AI startup and check if the .com domains are available."
