@@ -99,6 +99,7 @@ async function main() {
   if (outputJson) {
     console.log(
       JSON.stringify({
+        file_name: resolvedUpload.file_name,
         upload_id: resolvedUpload.upload_id,
         content_type: contentType,
         size_bytes: fileStat.size
@@ -107,7 +108,7 @@ async function main() {
     return;
   }
 
-  console.log(resolvedUpload.upload_id);
+  console.log(resolvedUpload.file_name);
 }
 
 main().catch((error) => {
