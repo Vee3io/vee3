@@ -1,6 +1,6 @@
 {
   "name": "@vee3/upload",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Upload local files to Vee3.",
   "homepage": "https://vee3.io",
   "type": "module",
@@ -27,8 +27,5 @@
     "cli",
     "mcp"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "@vee3/upload": "^0.1.1"
-  }
+  "license": "MIT"
 }

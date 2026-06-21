@@ -1,3 +1,5 @@
+import { UploadError, describeNetworkError } from "./errors.js";
+
 export const DEFAULT_API_BASE_URL = "https://api.vee3.io";
 
 async function formatApiError(response) {
@@ -15,19 +17,26 @@ async function formatApiError(response) {
 }
 
 export async function resolveUpload({ apiBaseUrl, uploadCode, contentType }) {
-  const response = await fetch(`${apiBaseUrl.replace(/\/$/, "")}/v1/agent-uploads/resolve`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      upload_code: uploadCode,
-      content_type: contentType
-    })
-  });
+  const requestUrl = `${apiBaseUrl.replace(/\/$/, "")}/v1/agent-uploads/resolve`;
+
+  let response;
+  try {
+    response = await fetch(requestUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        upload_code: uploadCode,
+        content_type: contentType
+      })
+    });
+  } catch (error) {
+    throw new UploadError(describeNetworkError(error, `the Vee3 API at ${apiBaseUrl}`));
+  }
 
   if (!response.ok) {
-    throw new Error(await formatApiError(response));
+    throw new UploadError(await formatApiError(response));
   }
 
   return await response.json();

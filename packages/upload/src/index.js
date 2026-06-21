@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
 import { stat } from "node:fs/promises";
+import { basename } from "node:path";
 import { DEFAULT_API_BASE_URL, resolveUpload } from "./api.js";
 import { detectContentType } from "./detectContentType.js";
+import { UploadError, UsageError } from "./errors.js";
+import { formatBytes } from "./format.js";
+import { ensureSystemCertificateTrust } from "./systemCertificates.js";
 import { uploadFileToSignedUrl } from "./uploadFile.js";
 
+ensureSystemCertificateTrust();
+
 function printUsage() {
-  console.error(
-    "Usage: vee3-upload <upload_code> <file_path> [--api-base-url https://api.vee3.io] [--json]"
-  );
+  console.error("Usage: vee3-upload <upload_code> <file_path>");
 }
 
 function parseArguments(argumentsList) {
@@ -21,7 +25,7 @@ function parseArguments(argumentsList) {
     if (argument === "--api-base-url") {
       const nextArgument = argumentsList[index + 1];
       if (!nextArgument) {
-        throw new Error("--api-base-url requires a value");
+        throw new UsageError("--api-base-url requires a value");
       }
       apiBaseUrl = nextArgument;
       index += 1;
@@ -35,7 +39,7 @@ function parseArguments(argumentsList) {
   }
 
   if (positionalArguments.length !== 2) {
-    throw new Error("Expected upload_code and file_path");
+    throw new UsageError("Expected upload_code and file_path");
   }
 
   return {
@@ -46,16 +50,30 @@ function parseArguments(argumentsList) {
   };
 }
 
+async function readFileStat(filePath) {
+  try {
+    return await stat(filePath);
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      throw new UploadError(`File not found: ${filePath}`);
+    }
+    throw new UploadError(`Could not read file: ${filePath} (${error.message})`);
+  }
+}
+
 async function main() {
   const { uploadCode, filePath, apiBaseUrl, outputJson } = parseArguments(
     process.argv.slice(2)
   );
-  const fileStat = await stat(filePath);
+
+  const fileStat = await readFileStat(filePath);
   if (!fileStat.isFile()) {
-    throw new Error(`File path is not a file: ${filePath}`);
+    throw new UploadError(`Not a file: ${filePath}`);
   }
 
   const contentType = await detectContentType(filePath);
+
+  console.error("Resolving upload code...");
   const resolvedUpload = await resolveUpload({
     apiBaseUrl,
     uploadCode,
@@ -63,11 +81,14 @@ async function main() {
   });
 
   if (fileStat.size > resolvedUpload.max_bytes) {
-    throw new Error(
-      `File is too large: ${fileStat.size} bytes exceeds ${resolvedUpload.max_bytes} bytes`
+    throw new UploadError(
+      `File is too large: ${formatBytes(fileStat.size)} exceeds the ${formatBytes(
+        resolvedUpload.max_bytes
+      )} limit.`
     );
   }
 
+  console.error(`Uploading ${basename(filePath)} (${formatBytes(fileStat.size)})...`);
   await uploadFileToSignedUrl({
     uploadUrl: resolvedUpload.upload_url,
     filePath,
@@ -90,7 +111,11 @@ async function main() {
 }
 
 main().catch((error) => {
-  printUsage();
-  console.error(error instanceof Error ? error.message : String(error));
+  if (error instanceof UsageError) {
+    printUsage();
+    console.error(error.message);
+  } else {
+    console.error(error instanceof Error ? error.message : String(error));
+  }
   process.exit(1);
 });
