@@ -2,9 +2,10 @@
 
 ## Description
 
-Vee3 connects coding agents to a hosted catalog of live data and action tools through one MCP server at `https://mcp.vee3.io/mcp`. Use it for market research, due diligence, competitive analysis, and fact-heavy tasks without leaving your editor.
+Website: https://vee3.io
+Vee3 connects AI agents to a hosted catalog of live data and action tools through one MCP server at `https://mcp.vee3.io/mcp`. Use it for market research, due diligence, competitive analysis, and fact-heavy tasks without leaving your editor.
 
-Tools cover domain research (availability, WHOIS, DNS, RDAP, metrics), X (Twitter) search and profiles, Google Trends and keyword insights, SEO and backlinks, Google Maps places, YouTube and TikTok data, Rotten Tomatoes metadata, website screenshots, and free catalog discovery helpers.
+Tools cover domain research, X (Twitter), Google Trends, Google Search Insights, SEO and backlinks, Google Maps places, YouTube and TikTok data, Rotten Tomatoes metadata, website screenshots, and free catalog discovery helpers.
 
 Sign up at [app.vee3.io](https://app.vee3.io) for a free tier. Tool calls use token-based billing; failed calls are not charged.
 
