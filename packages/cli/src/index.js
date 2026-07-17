@@ -17,7 +17,9 @@ function printHelp() {
   console.log("Vee3 CLI");
   console.log("");
   console.log("Install once: npm install -g @vee3/cli");
-  console.log("This package installs the Vee3 command-line tools listed below.");
+  console.log(
+    "This package installs the Vee3 command-line tools listed below on your PATH."
+  );
   console.log("");
   console.log("Commands:");
   for (const command of COMMANDS) {

@@ -1,13 +1,16 @@
 {
   "name": "@vee3/cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Vee3 command-line tools (upload, get-file, and more).",
   "homepage": "https://vee3.io",
   "type": "module",
   "bin": {
-    "vee3": "./src/index.js"
+    "vee3": "./src/index.js",
+    "vee3-get-file": "./bin/vee3-get-file.js",
+    "vee3-upload": "./bin/vee3-upload.js"
   },
   "files": [
+    "bin",
     "src"
   ],
   "engines": {
