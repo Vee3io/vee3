@@ -1,0 +1,31 @@
+﻿{
+  "name": "@vee3/get-file",
+  "version": "0.2.0",
+  "description": "Download files from Vee3.",
+  "homepage": "https://vee3.io",
+  "type": "module",
+  "bin": {
+    "vee3-get-file": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vee3io/Vee3.git",
+    "directory": "packages/get-file"
+  },
+  "keywords": [
+    "vee3",
+    "get-file",
+    "cli",
+    "mcp"
+  ],
+  "license": "MIT"
+}
