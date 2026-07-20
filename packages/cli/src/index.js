@@ -3,12 +3,12 @@
 const COMMANDS = [
   {
     name: "vee3-upload",
-    summary: "Upload a local file using an upload code from meta-tools.upload_file",
+    summary: "Upload a local file using an upload code from files.upload_file",
     usage: "vee3-upload <upload_code> <file_path>"
   },
   {
     name: "vee3-get-file",
-    summary: "Download a stored file using a download code from meta-tools.download_file",
+    summary: "Download a stored file using a download code from files.download_file",
     usage: "vee3-get-file <download_code> [output_path]"
   }
 ];

@@ -1,12 +1,12 @@
 # Vee3
 
 ## Tagline
-Live agent tools for domains, X, Google Trends, SEO, YouTube, TikTok, and more.
+Live agent tools for Clerk, domains, X, Google Trends, SEO, YouTube, TikTok, files, and more.
 
 ## Description
 Vee3 connects coding agents to a hosted catalog of live data and action tools through one MCP server at `https://mcp.vee3.io/mcp`. Use it for market research, due diligence, competitive analysis, and fact-heavy tasks without leaving your editor.
 
-Tools cover domain research (availability, WHOIS, DNS, RDAP, metrics), X (Twitter) search and profiles, Google Trends and keyword insights, SEO and backlinks, Google Maps places, YouTube and TikTok data, Rotten Tomatoes metadata, website screenshots, and free catalog discovery helpers.
+Tools cover Clerk (users, organizations, sessions, invitations, and more in the user's own Clerk app), domain research (availability, WHOIS, DNS, RDAP, metrics), X (Twitter) search and profiles, Google Trends and keyword insights, SEO and backlinks, Google Maps places, YouTube and TikTok data, Rotten Tomatoes metadata, website screenshots, file upload and download for use with other capabilities, and free catalog discovery helpers.
 
 Sign up at [app.vee3.io](https://app.vee3.io) for a free tier. Tool calls use token-based billing; failed calls are not charged.
 
@@ -30,9 +30,10 @@ Sign up at [app.vee3.io](https://app.vee3.io) for a free tier. Tool calls use to
 Other
 
 ## Use Cases
-Market Research, Due Diligence, Content Research, Prototyping, Competitive Analysis
+Market Research, Due Diligence, Content Research, Prototyping, Competitive Analysis, Auth and User Management
 
 ## Features
+- Clerk users, organizations, sessions, invitations, and related APIs in the user's own Clerk application
 - Domain availability, WHOIS, DNS, RDAP, metrics, and TLD research
 - X (Twitter) search, tweets, replies, user profiles, and timelines
 - Google Trends interest over time, related queries, suggestions, and regional breakdowns
@@ -43,6 +44,7 @@ Market Research, Due Diligence, Content Research, Prototyping, Competitive Analy
 - Rotten Tomatoes movie and TV search, scores, reviews, and cast data
 - TikTok user profiles, videos, search, comments, music, and downloads
 - Website screenshots for visual review of public URLs
+- File upload, list, download, and related helpers for use with other Vee3 capabilities
 - Free catalog discovery via `meta-tools.list_groups`, `meta-tools.list_group_tools`, `meta-tools.list_all`, and `meta-tools.describe`
 
 ## Getting Started
@@ -53,9 +55,10 @@ Market Research, Due Diligence, Content Research, Prototyping, Competitive Analy
 - "Search YouTube for recent videos about AI coding agents and summarize the top five by views."
 - "Search Rotten Tomatoes for Dune and compare critic vs audience scores."
 - "Search TikTok for videos about AI agents and summarize the top five by engagement."
+- "List users in my Clerk application and show who signed up this week."
 
 ## Tags
-vee3, mcp, agent-tools, domains, whois, dns, twitter, x, google-trends, seo, backlinks, youtube, tiktok, rotten-tomatoes, google-maps, screenshots, market-research, keyword-research, competitive-analysis, data-enrichment
+vee3, mcp, agent-tools, clerk, domains, whois, dns, twitter, x, google-trends, seo, backlinks, youtube, tiktok, rotten-tomatoes, google-maps, screenshots, files, market-research, keyword-research, competitive-analysis, data-enrichment
 
 ## Documentation URL
 https://vee3.io/capabilities

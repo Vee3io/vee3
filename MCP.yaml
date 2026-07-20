@@ -1,18 +1,20 @@
 id: vee3
 name: Vee3
-description: Live agent tools for domains, X, Google Trends, SEO, YouTube, TikTok, and more.
+description: Live agent tools for Clerk, domains, X, Google Trends, SEO, YouTube, TikTok, files, and more.
 author: Vee3
 url: https://github.com/Vee3io/vee3
 tags:
   - mcp
   - vee3
   - live-agent
+  - clerk
   - domains
   - x
   - google-trends
   - seo
   - youtube
   - tiktok
+  - files
   - market-research
 prerequisites:
   - Free account at app.vee3.io
